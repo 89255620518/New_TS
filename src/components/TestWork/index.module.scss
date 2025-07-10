@@ -282,9 +282,10 @@
                             background: rgba(255, 255, 255, 1);
                             box-shadow: 2px 2px 4px 0px rgba(199, 199, 199, 0.25);
 
-                            &_active {
-                                background: linear-gradient(180deg, #CBA543 0%, #D9B14A 35.42%, #B89B36 100%);
-                                color: rgba(255, 255, 255, 1);
+                            &:hover {
+                                cursor: pointer;
+                                background: #000;
+                                color: #fff;
                             }
                         }
                     }
@@ -326,4 +327,13 @@
             color: rgba(177, 153, 66, 1);
         }
     }
+}
+
+.active {
+    background: linear-gradient(180deg, #CBA543 0%, #D9B14A 35.42%, #B89B36 100%);
+    color: rgba(255, 255, 255, 1);
+}
+
+.containerWork__descriptions_dates_carusel__malekyls {
+    transition: all 0.5s ease-in-out;
 }
