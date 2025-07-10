@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.containerWork {
+    position: relative;
+    max-height: 2000px;
+    max-width: 2200px;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    background-image: url('./img/fon.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+
+    &__header {
+        position: relative;
+        width: 100%;
+        padding: 40px 0;
+        z-index: 2;
+
+        &_h2 {
+            font-family: "Foco Trial";
+            font-weight: 400;
+            font-style: "Regular";
+            font-size: 32px;
+            line-height: 100%;
+            text-align: center;
+            color: rgba(177, 153, 66, 1);
+        }
+    }
+
+    &__descriptions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 30px;
+
+        &_h1 {
+            font-family: Foco;
+            font-weight: 700;
+            font-style: Bold;
+            font-size: 64px;
+            line-height: 72px;
+            letter-spacing: 0%;
+            text-align: center;
+            color: rgba(0, 54, 160, 1);
+        }
+
+        &_dates {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+
+            &_carusel {
+                position: relative;
+                width: 100%;
+                height: 750px;
+
+                &__malekyls {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    &_fonImg {
+                        position: absolute;
+                        z-index: 0;
+                    }
+
+                    &_malekyl {
+                        width: 60%;
+                        margin-bottom: 10px;
+                        position: relative;
+                        z-index: 1;
+                    }
+
+                    &_p,
+                    &_p2,
+                    &_p3 {
+                        position: relative;
+                        z-index: 1;
+                        font-weight: 700;
+                        color: rgba(189, 144, 57, 1);
+                        text-align: center;
+                    }
+
+                    &_p {
+                        font-size: 70px;
+                    }
+
+                    &_p2 {
+                        font-size: 20px;
+                    }
+
+                    &_p3 {
+                        font-size: 35px;
+                    }
+                }
+
+                .microElement {
+                    width: 287.42px;
+                    height: 306.69px;
+                    top: 82px;
+                    right: 559px;
+                    z-index: 1;
+
+                    & .containerWork__descriptions_dates_carusel__malekyls_fonImg {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .probiotics {
+                    width: 389.35px;
+                    height: 402.1px;
+                    top: 178px;
+                    left: 297px;
+                    z-index: 3;
+
+                    & .containerWork__descriptions_dates_carusel__malekyls_fonImg {
+                        width: 100%;
+                        height: 100%;
+                        transform: rotate(-180deg);
+                    }
+                }
+
+                .protein {
+                    width: 658.56px;
+                    height: 702.72px;
+                    top: 371px;
+                    z-index: 3;
+                    right: 91px;
+
+                    & .containerWork__descriptions_dates_carusel__malekyls_fonImg {
+                        width: 100%;
+                        height: 100%;
+                        transform: rotate(-180deg);
+                    }
+                }
+
+                &_img {
+                    position: absolute;
+                    width: 1339.19px;
+                    height: 861.02px;
+                    top: 16px;
+                    left: 424.4px;
+                    z-index: 2;
+                }
+            }
+
+            &_info {
+                padding-bottom: 20px;
+
+                &_pagDate {
+                    width: 30%;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    gap: 15px;
+                    padding: 15px;
+                    opacity: 1;
+                    top: 182px;
+                    border-width: 4px;
+                    border-top-left-radius: 30px;
+                    border-top-right-radius: 50px;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 50px;
+                    background: radial-gradient(178.99% 131.85% at 5.41% 6.48%, rgba(251, 251, 251, 0.3) 0%, rgba(252, 252, 252, 0.3) 100%);
+                    border: 4px solid;
+                    border-image-source: linear-gradient(111.84deg, #FFFFFF 10.66%, rgba(255, 255, 255, 0) 77.79%);
+                    box-shadow: 0px 12px 17.8px 0px rgba(183, 213, 225, 0.25);
+                    backdrop-filter: blur(18.200000762939453px);
+
+                    &_button {
+                        width: 366.3984375px;
+                        height: 127.47802734375px;
+                        opacity: 1;
+                        padding: 5px 15px;
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 35px;
+                        border-bottom-right-radius: 20px;
+                        border-bottom-left-radius: 35px;
+                        background: linear-gradient(180deg, #CBA543 0%, #D9B14A 35.42%, #B89B36 100%);
+                        font-family: "Foco Trial";
+                        font-weight: 700;
+                        font-style: "Bold";
+                        font-size: 30px;
+                        line-height: 40px;
+                        text-align: center;
+                        color: rgba(255, 255, 255, 1);
+                    }
+
+                    &_text {
+                        font-family: "Foco Trial";
+                        font-weight: 700;
+                        font-style: "Bold";
+                        font-size: 56px;
+                        line-height: 40px;
+                        color: #CBA543;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        position: relative;
+
+                        gap: 5px;
+
+                        &_span {
+                            display: block;
+                            width: 100%;
+                            text-align: center;
+                            border-top: 3px solid #CBA543;
+                            margin: 5px 0;
+                        }
+
+                        &::before,
+                        &::after {
+                            content: '';
+                            white-space: nowrap;
+                        }
+                    }
+                }
+
+                &_paginations {
+                    width: 1064px;
+                    height: 167px;
+                    opacity: 1;
+                    border-width: 4px;
+                    border-top-left-radius: 30px;
+                    border-top-right-radius: 50px;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 50px;
+                    background: radial-gradient(178.99% 131.85% at 5.41% 6.48%, rgba(251, 251, 251, 0.3) 0%, rgba(252, 252, 252, 0.3) 100%);
+                    border: 4px solid;
+                    border-image-source: linear-gradient(111.84deg, #FFFFFF 10.66%, rgba(255, 255, 255, 0) 77.79%);
+                    box-shadow: 0px 12px 17.8px 0px rgba(183, 213, 225, 0.25);
+                    backdrop-filter: blur(18.200000762939453px);
+                    padding: 15px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    &_buttons {
+                        width: 972px;
+                        height: 128px;
+                        opacity: 1;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 35px;
+                        border-bottom-right-radius: 20px;
+                        border-bottom-left-radius: 35px;
+
+                        &_button {
+                            border: 1px solid #fff;
+                            width: 367px;
+                            height: 128px;
+                            padding: 5px 15px;
+                            opacity: 1;
+                            border-top-left-radius: 20px;
+                            border-top-right-radius: 35px;
+                            border-bottom-right-radius: 20px;
+                            border-bottom-left-radius: 35px;
+                            font-family: "Foco Trial";
+                            font-weight: 700;
+                            font-size: 30px;
+                            line-height: 40px;
+                            text-align: center;
+                            color: #CBA543;
+                            background: rgba(255, 255, 255, 1);
+                            box-shadow: 2px 2px 4px 0px rgba(199, 199, 199, 0.25);
+
+                            &_active {
+                                background: linear-gradient(180deg, #CBA543 0%, #D9B14A 35.42%, #B89B36 100%);
+                                color: rgba(255, 255, 255, 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        justify-content: flex-start;
+        padding-bottom: 20px;
+
+        &_icons {
+            width: 487px;
+            height: 75px;
+            opacity: 1;
+            background: rgba(209, 175, 85, 1);
+            border-radius: 0 20px 20px 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        &_p {
+            font-family: "Rounded Mplus 1c";
+            font-weight: 500;
+            font-style: "Medium";
+            font-size: 23px;
+            line-height: 28px;
+            text-align: left;
+            width: 670px;
+            color: rgba(177, 153, 66, 1);
+        }
+    }
+}
