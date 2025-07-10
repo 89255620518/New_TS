@@ -9,18 +9,48 @@ import belokImg from './img/малекулаБелка.png';
 import mikroImg from './img/малекулаМикр.png';
 import probiotikiImg from './img/прибиотики.svg';
 import banochka from './img/Баночка.svg';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const TestWork = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const carouselRef = useRef(null);
+
+  const minSwipeDistance = 50;
 
   const handleButtonClick = (index) => {
     setActiveIndex(index);
   };
 
-  // Позиции для элементов карусели
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      setActiveIndex((prevIndex) =>
+        prevIndex === positions.length - 1 ? 0 : prevIndex + 1
+      );
+    } else if (isRightSwipe) {
+      setActiveIndex((prevIndex) =>
+        prevIndex === 0 ? positions.length - 1 : prevIndex - 1
+      );
+    }
+  };
+
   const positions = [
-    { // Микроэлементы (по умолчанию справа снизу)
+    {
       className: styles.microElement,
       style: {
         width: '287.42px',
@@ -32,7 +62,7 @@ const TestWork = () => {
       },
       fontSize: '20px'
     },
-    { // Пробиотики (центральная позиция)
+    {
       className: styles.probiotics,
       style: {
         width: '389.35px',
@@ -43,7 +73,7 @@ const TestWork = () => {
       },
       fontSize: '35px'
     },
-    { // Белок (главная позиция)
+    {
       className: styles.protein,
       style: {
         width: '658.56px',
@@ -57,17 +87,19 @@ const TestWork = () => {
     }
   ];
 
-  // Определяем порядок элементов в зависимости от активного индекса
   const getElementPosition = (elementIndex) => {
-    // Вычисляем позицию элемента в карусели
     const carouselPosition = (elementIndex - activeIndex + positions.length) % positions.length;
     return positions[carouselPosition];
   };
 
-
-
   return (
-    <div className={styles.containerWork}>
+    <div
+      className={styles.containerWork}
+      ref={carouselRef}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className={styles.containerWork__header}>
         <h2 className={styles.containerWork__header_h2}>ИДЕАЛЬНОЙ ПИЩЕЙ ДЛЯ ГРУДНОГО РЕБЕНКА ЯВЛЯЕТСЯ МОЛОКО МАТЕРИ</h2>
       </div>
@@ -77,7 +109,6 @@ const TestWork = () => {
 
         <div className={styles.containerWork__descriptions_dates}>
           <div className={styles.containerWork__descriptions_dates_carusel}>
-            {/* Микроэлементы */}
             <div
               className={`${styles.containerWork__descriptions_dates_carusel__malekyls} ${styles.microElement}`}
               style={{
@@ -104,7 +135,6 @@ const TestWork = () => {
               alt='banochka'
             />
 
-            {/* Пробиотики */}
             <div
               className={`${styles.containerWork__descriptions_dates_carusel__malekyls} ${styles.probiotics}`}
               style={{
@@ -125,7 +155,6 @@ const TestWork = () => {
               <p className={styles.containerWork__descriptions_dates_carusel__malekyls_p3} style={{ fontSize: getElementPosition(1).fontSize }}>Пробиотики</p>
             </div>
 
-            {/* Белок */}
             <div
               className={`${styles.containerWork__descriptions_dates_carusel__malekyls} ${styles.protein}`}
               style={{
@@ -194,7 +223,6 @@ const TestWork = () => {
             </div>
           </div>
         </div>
-
       </div>
 
       <div className={styles.containerWork__footer}>
